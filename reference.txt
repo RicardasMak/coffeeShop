@@ -1,0 +1,5 @@
+twig compare values -> https://stackoverflow.com/questions/43655599/is-identical-in-twig
+twig if not null -> https://stackoverflow.com/questions/31314592/twig-is-defined-and-is-not-null/31315420
+image -> https://www.google.com/search?q=coffee+background&tbm=isch&ved=2ahUKEwjUrdCsw7HoAhXlQBUIHStDCbUQ2-cCegQIABAA&oq=coffee+background&gs_l=img.3..0l10.87830.90200..90381...0.0..0.60.569.11......0....1..gws-wiz-img.......0i67.rlSvicVkhfI&ei=MSh5XpTROeWB1fAPq4alqAs&bih=608&biw=1230#imgrc=uWPAiKEiQtqbEM
+
+https://twig.symfony.com/doc/3.x/tags/index.html

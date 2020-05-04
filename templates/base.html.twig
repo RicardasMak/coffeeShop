@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Coffee Shops</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <ul>
+            {% if role %}
+
+                <li class="login">
+
+                    <a href="/index.php?action=logout">
+                         Log out
+                    </a>
+
+                </li>
+                <p class="permission">{{ role }}</p>
+            {% else %}
+                <li class="login">
+                    <a href="/index.php?action=login">
+                        Log in
+                    </a>
+                </li>
+            {% endif %}
+
+               <li>
+                <a href="/index.php">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="/index.php?action=about">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="/index.php?action=review">
+                    Review
+                </a>
+            </li>
+
+            {% if role is same as ('admin') %}
+
+            <li>
+                <a href="/index.php?action=secret">
+                    Create user
+                </a>
+            </li>
+            {% endif %}
+
+            {% if ifPayed == 1 %}
+
+                <li>
+                    <a href="/index.php?action=profile">
+                        Create Profile
+                    </a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+
+    {% block main %}
+    {% endblock %}
+
+</body>
+
+</html>

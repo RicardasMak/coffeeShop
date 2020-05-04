@@ -1,0 +1,139 @@
+html{
+    background-image: url("/images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: white;
+    color: black;
+}
+.login{
+    float: right;
+    margin-right: 10px;
+}
+/* navigation bar ends*/
+h1{
+    color: white;
+}
+p{
+    color: white;
+    font-style: italic;
+}
+form{
+    margin-top:100px;
+}
+.loginForm{
+    margin-top: 100px;
+    text-align: center;
+}
+.form{
+    margin-top: 10px;
+    margin-left: 10%;
+}
+.mainP{
+    margin: 20%;
+}
+.comments{
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.comment{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.permission{
+    float: right;
+}
+.createUser{
+    text-align: center;
+}
+.userForm{
+    text-align: center;
+    margin-top: 50px;
+}
+.unauthorized{
+    text-align: center;
+    margin-top: 12%;
+}
+.radio{
+    display: ruby-text-container;
+}
+.isDeleted{
+    background: black;
+
+}
+
+.button{
+    margin-bottom: 70px;
+    text-align: center;
+}
+.userDelete{
+    float: right;
+    margin-right: 200px;
+}
+.userCreate{
+    float: left;
+    margin-left: 200px;
+}
+.date{
+    color:white;
+    font-size: 12px;
+    margin-bottom: 30px;
+    display: flex;
+    margin-left: 30px;
+}
+.commentss{
+    margin-top: 30px;
+}
+.buttonCommentD{
+
+    margin-right: 10px;
+}
+.deletepermit{
+    display: flex;
+}
+.time{
+    margin-left: 10px;
+}
+.shop{
+    list-style: none;
+    color: white;
+    float: unset;
+}
+.review{
+    margin-left: 40px;
+    list-style: circle;
+    color: white;
+    float: unset;
+}
+hr{
+    color: white;
+}
+.profileDisplay{
+    align-items: center;
+}
+

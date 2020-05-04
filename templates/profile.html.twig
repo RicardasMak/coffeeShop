@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <form class="userCreate" method='post' action='/'>
+
+        <h1 class="createUser">Create Profile</h1>
+
+        <input type="hidden" name="action" value="profileSubmit">
+
+        <div>
+            <label for="email"><p>email</p></label>
+            <input type='text' name="email">
+        </div>
+
+        <div>
+            <label for="position"><p>Position</p></label>
+            <input type="text" name="occupation">
+
+        </div>
+        <div>
+            <label for="phone"><p>Phone Number</p></label>
+            <input type="text" name="phone">
+        </div>
+        <br>
+        <input class="button" type="submit" value="Create Profile">
+        </div>
+    </form>
+
+
+    <form class="userDelete" method='post' action='/'>
+
+        <h1 class="createUser">Current Details</h1>
+        <br>
+        {% if account is defined %}
+
+            <h3><p>Email: {{ account.email }}</p></h3>
+        <br>
+            <h3><p>Phone: {{ account.phone }}</p></h3>
+        <br>
+            <h3><p>Occupation: {{ account.occupation }}</p></h3>
+
+        {% else %}
+
+            <h3><p>profile if not complected</p></h3>
+
+        {% endif %}
+    </form>
+
+
+{% endblock %}

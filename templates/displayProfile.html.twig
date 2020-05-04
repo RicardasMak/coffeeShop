@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="profileDisplay">
+
+        <h1 class="createUser">{{ account.userName }} details</h1>
+        <br>
+        {% if account is defined %}
+
+            <h3><p>Email: {{ account.email }}</p></h3>
+            <br>
+            <h3><p>Phone: {{ account.phone }}</p></h3>
+            <br>
+            <h3><p>Occupation: {{ account.occupation }}</p></h3>
+
+        {% else %}
+
+            <h3><p>profile if not complected</p></h3>
+
+        {% endif %}
+    </div>
+{% endblock %}

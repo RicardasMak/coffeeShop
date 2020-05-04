@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+
+    <form class="loginForm" method='post' action='/'>
+
+        <input type="hidden" name="action" value="processLogin">
+
+        <div>
+            <label for="logIn"><p>User Name</p></label>
+            <input type='text' name="userName" required>
+        </div>
+
+        <div>
+            <label for="logIn"><p>Password</p></label>
+            <input type="password" name="password" required>
+
+        </div>
+
+        {% for error in errors %}
+
+            <p>{{ error }}</p>
+
+        {% endfor %}
+
+        <br>
+        <input type="submit" value="Log in">
+
+    </form>
+
+{% endblock %}
