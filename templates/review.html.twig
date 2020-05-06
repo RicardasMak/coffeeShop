@@ -36,7 +36,7 @@
             {% endif %}
 
             <p>Reviews</p>
-            <!-- display shop review ----------------->
+            <!-- display shop review -->
             {% for review in review %}
 
                 {% if shop.getId == review.getId %}
@@ -82,19 +82,19 @@
                                <!-- checks if shops table id matches comment table id -->
                            {% if shop.getId == comment.getId %}
 
-                                <!- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display ->
+                                <!-- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display -->
                                {% if comment.getPermit != 0 and userName == ''%}
 
                                    <li class="review"><p>{{ comment.getComment }}</p></li>
 
-                                <!- if user login as staff or shop owner will display all comments ->
+                                <!-- if user login as staff or shop owner will display all comments -->
                                {% elseif role == 'staff' or userName == shop.userName %}
 
                                    <p class="reviews">
                                    <li class="review">{{ comment.getComment }} </li>
 
                                {% endif %}
-                               <!------------------------->
+                               <!-- -->
 
                                    <!-- will check if user who commented is payed acc and allow to view profile details -->
                                {% if comment.getProfilePayed > 0 %}
@@ -109,7 +109,7 @@
 
                                {% endif %}
 
-                               <!---------------delete, permit buttons and date comented-------------------------->
+                               <!-- delete, permit buttons and date comented -->
 
                                <!- if user is loged in as staff or shop owner will display option to delete and permit comment to go online ->
                                {% if role == 'staff' or userName == shop.userName %}
@@ -119,7 +119,7 @@
                                            <p >DELETE</p>
                                        </a>
 
-                                       <!- if comment is still not permitted will display option to permit ->
+                                       <!-- if comment is still not permitted will display option to permit -->
                                        {% if comment.getPermit == 0 %}
 
                                            <a href="/index.php?action=permitComment&id={{ comment.getIdUnque }}&permit=1">
@@ -130,7 +130,7 @@
 
                                    </div>
                                {% endif %}
-                               <!------------------>
+                               <!-- -->
                              {% endif %}
 
                            {% endfor %}
