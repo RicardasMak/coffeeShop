@@ -25,7 +25,7 @@
 
             <li class="shop"><h2>{{ shop.getShopName }}</h2>
 
-            <!- delete shop ->
+            <!-- delete shop -->
 
             {% if role == 'staff' or userName == shop.userName %}
 
@@ -36,7 +36,7 @@
             {% endif %}
 
             <p>Reviews</p>
-            <!- display shop review ----------------->
+            <!-- display shop review ----------------->
             {% for review in review %}
 
                 {% if shop.getId == review.getId %}
