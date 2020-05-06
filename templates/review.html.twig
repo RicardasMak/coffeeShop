@@ -58,7 +58,7 @@
 
             {% endfor %}
 
-            <!- add review ->
+            <!-- add review -->
 
             {% if role == 'staff' or shop.getShopOwner == userName and role == 'shop' %}
 
@@ -79,7 +79,7 @@
                            {% for comment in comment %}
 
 
-                               <!- checks if shops table id matches comment table id ->
+                               <!-- checks if shops table id matches comment table id -->
                            {% if shop.getId == comment.getId %}
 
                                 <!- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display ->
@@ -96,7 +96,7 @@
                                {% endif %}
                                <!------------------------->
 
-                                   <!- will check if user who commented is payed acc and allow to view profile details ->
+                                   <!-- will check if user who commented is payed acc and allow to view profile details -->
                                {% if comment.getProfilePayed > 0 %}
 
                                    <a href="/index.php?action=profileDisplay&name={{ comment.getUserName }}">

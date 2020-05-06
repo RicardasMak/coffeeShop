@@ -39,7 +39,7 @@ class MainController
         print $html;
     }
     //comments, review, shops page
-    public function review($error = [])
+    public function review($error = null)
     {
         $templates = 'review.html.twig';
         $args=['shop' =>$this->dB->getAllShops(),

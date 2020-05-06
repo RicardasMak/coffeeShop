@@ -36,7 +36,7 @@ class ShopController
                 if($role == 'staff')
                 {
                     $this->dB->insertShop($shopName, $userName, $ifPayed, $shopOwner);
-                    $this->mainController->review();
+                    $this->mainController->review('created shop');
                 }
 
             }else{
@@ -98,7 +98,7 @@ class ShopController
         $this->dB->detele('comment', $id);
         $this->dB->detele('review', $id);
 
-        $this->mainController->review($error = []);
+        $this->mainController->review('shop deleted');
     }
 
 }
