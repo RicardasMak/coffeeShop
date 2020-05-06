@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac722e71-2fc1-41e1-b631-dfc5694d4b70" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dbConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/dbConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShopController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/review.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/secret.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/secret.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,16 +135,39 @@
       <workItem from="1588019317938" duration="4000" />
       <workItem from="1588610128882" duration="7682000" />
       <workItem from="1588624924733" duration="791000" />
+      <workItem from="1588682108134" duration="267000" />
+      <workItem from="1588755744513" duration="1506000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1588757035126</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588757035126</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="420" y="125" width="800" height="684" key="#SQL_Dialects" timestamp="1586979518038">
@@ -163,6 +186,10 @@
       <screen x="50" y="27" width="1550" height="873" />
     </state>
     <state x="119" y="27" width="514" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/50.27.1550.873@50.27.1550.873" timestamp="1587805743906" />
+    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2" timestamp="1588757034438">
+      <screen x="50" y="27" width="1550" height="873" />
+    </state>
+    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2/50.27.1550.873@50.27.1550.873" timestamp="1588757034438" />
     <state x="607" y="210" width="424" height="521" key="FileChooserDialogImpl" timestamp="1588000418673">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
