@@ -13,6 +13,8 @@ create table users(
     );
 
 insert into users(userName, password, role, payed) value('admin', '$2y$10$qwZ1biRcwjseUeJy7RTZKen/FCEGqYtOFqs/D8BUSB9MKqyUJwJq2', 'admin', 1);
+insert into users(userName, password, role, payed) value('staff', '$2y$10$89t24/GN7Bwh/7C7.O2UZO8wCZdgH6E0mIwAENO7TQobnS2HvN02y', 'staff', 0);
+insert into users(userName, password, role, payed) value('shop', '$2y$10$2ThUm7.OdYTTSuXTnroFFOKU8ZRKIMOqbJL6XW9q8KFLYH4vdi0bm', 'shop', 1);
 
 create table shop(
     id INT AUTO_INCREMENT primary key NOT NULL,
@@ -41,3 +43,4 @@ create table review(
     userName varchar(250) not null
     );
 
+insert into shop(shopName, userName, profilePayed, shopOwner) value ('Amt', 'staff', '0', 'shop');
