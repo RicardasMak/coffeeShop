@@ -22,7 +22,7 @@ class CommentController
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        $this->dB->detele('comment', $id);
+        $this->dB->deteleShopContent('comment', $id);
 
         $this->mainController->review();
     }

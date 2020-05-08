@@ -27,7 +27,6 @@ class Db
     //displays all from comment tables and returns all
     public function getAllShops()
     {
-
             $sql = 'SELECT * FROM shop ORDER BY date DESC';
 
             $stmt = $this->connection->prepare($sql);
@@ -41,7 +40,6 @@ class Db
     //gets all review
     public function getAllReview()
     {
-
         $sql = 'SELECT * FROM review ORDER BY date DESC';
 
         $stmt = $this->connection->prepare($sql);
@@ -85,7 +83,6 @@ class Db
 
     public function insertComment($id, $comment, $userName, $permit, $profilePayed)
     {
-
         $sql = 'INSERT INTO comment (id, comment, userName, permit, profilePayed) 
 							VALUES (:id, :comment, :userName, :permit, :profilePayed)';
 
@@ -154,14 +151,18 @@ class Db
         return $stmt->execute();
     }
     //deletes from table shop, comment or review
-    public function detele($table, $id)
+    public function deteleShop($table, $id)
     {
         if($table == 'shop')
         {
-            $sql = "DELETE FROM ".$table." WHERE id = :id";
+            $sql = "DELETE FROM shop WHERE id = :id";
         }
-        else{
-            $sql = "DELETE FROM ".$table." WHERE idUnque = :id";
+        elseif($table == 'review')
+        {
+            $sql = "DELETE FROM review WHERE id = :id";
+        }else
+        {
+            $sql = "DELETE FROM comment WHERE id = :id";
         }
 
         $stmt = $this->connection->prepare($sql);
@@ -217,4 +218,21 @@ class Db
         return $stmt->fetch();
     }
 
+    //delete from comment or review tables
+    public function deteleShopContent($table, $id)
+    {
+        if($table == 'comment')
+        {
+            $sql = "DELETE FROM comment WHERE idUnque = :id";
+        }else
+        {
+            $sql = "DELETE FROM review WHERE idUnque = :id";
+        }
+
+        $stmt = $this->connection->prepare($sql);
+
+        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
 }

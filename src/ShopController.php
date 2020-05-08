@@ -94,9 +94,9 @@ class ShopController
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        $this->dB->detele('shop', $id);
-        $this->dB->detele('comment', $id);
-        $this->dB->detele('review', $id);
+        $this->dB->deteleShop('shop', $id);
+        $this->dB->deteleShop('comment', $id);
+        $this->dB->deteleShop('review', $id);
 
         $this->mainController->review('shop deleted');
     }

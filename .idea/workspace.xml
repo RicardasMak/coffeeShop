@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ac722e71-2fc1-41e1-b631-dfc5694d4b70" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dbConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/dbConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReviewController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/review.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,8 @@
       <workItem from="1588610128882" duration="7682000" />
       <workItem from="1588624924733" duration="791000" />
       <workItem from="1588682108134" duration="267000" />
-      <workItem from="1588755744513" duration="1769000" />
+      <workItem from="1588755744513" duration="3065000" />
+      <workItem from="1588980284074" duration="1847000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1588757035126</created>
@@ -152,7 +153,35 @@
       <option name="project" value="LOCAL" />
       <updated>1588757283598</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1588757670374</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588757670374</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1588758234298</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588758234298</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1588758438460</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588758438460</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <created>1588758502699</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588758502699</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +192,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -195,10 +226,10 @@
       <screen x="50" y="27" width="1550" height="873" />
     </state>
     <state x="119" y="27" width="514" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/50.27.1550.873@50.27.1550.873" timestamp="1587805743906" />
-    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2" timestamp="1588757283140">
+    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2" timestamp="1588758502472">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
-    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2/50.27.1550.873@50.27.1550.873" timestamp="1588757283140" />
+    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2/50.27.1550.873@50.27.1550.873" timestamp="1588758502472" />
     <state x="607" y="210" width="424" height="521" key="FileChooserDialogImpl" timestamp="1588000418673">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
@@ -215,6 +246,14 @@
       <screen x="50" y="27" width="1550" height="873" />
     </state>
     <state x="338" y="97" width="1022" height="737" key="SettingsEditor/50.27.1550.873@50.27.1550.873" timestamp="1585144945270" />
+    <state x="420" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1588758512148">
+      <screen x="50" y="27" width="1550" height="873" />
+    </state>
+    <state x="420" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/50.27.1550.873@50.27.1550.873" timestamp="1588758512148" />
+    <state x="597" y="383" width="445" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588982130293">
+      <screen x="50" y="27" width="1550" height="873" />
+    </state>
+    <state x="597" y="383" width="445" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/50.27.1550.873@50.27.1550.873" timestamp="1588982130293" />
     <state x="488" y="214" width="672" height="678" key="search.everywhere.popup" timestamp="1587815955276">
       <screen x="50" y="27" width="1550" height="873" />
     </state>

@@ -43,7 +43,7 @@ class ReviewController
 
         if(!empty($id))
         {
-            $this->dB->detele('review', $id);
+            $this->dB->deteleShopContent('review', $id);
         }
         $this->mainController->review();
     }
