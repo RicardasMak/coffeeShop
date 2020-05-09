@@ -87,8 +87,8 @@
 
                                    <li class="review"><p>{{ comment.getComment }}</p></li>
 
-                                <!-- if user login as staff or shop owner will display all comments -->
-                               {% elseif role == 'staff' or userName == shop.getShopOwner %}
+                                <!-- if user login as staff, shop owner or admin will display all comments -->
+                               {% elseif role == 'staff' or userName == shop.getShopOwner or role == 'admin' %}
 
                                    <p class="reviews">
                                    <li class="review">{{ comment.getComment }} </li>
