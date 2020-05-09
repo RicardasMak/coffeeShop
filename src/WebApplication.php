@@ -115,7 +115,7 @@ class WebApplication
                 break;
 
             case 'profileDisplay':
-                $this->profileManager->displayProfile($error =[]);
+                $this->profileManager->displayProfile();
                 break;
 
             case 'processComment':
