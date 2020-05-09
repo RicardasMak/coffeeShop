@@ -1,10 +1,11 @@
-html{
+html {
     background-image: url("/images/background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
 }
+
 /* navigation bar */
 ul {
     list-style-type: none;
@@ -29,111 +30,133 @@ li a:hover {
     background-color: white;
     color: black;
 }
-.login{
+
+.login {
     float: right;
     margin-right: 10px;
 }
+
 /* navigation bar ends*/
-h1{
+h1 {
     color: white;
 }
-p{
+
+p {
     color: white;
     font-style: italic;
 }
-form{
-    margin-top:100px;
+
+form {
+    margin-top: 100px;
 }
-.loginForm{
+
+.loginForm {
     margin-top: 100px;
     text-align: center;
 }
-.form{
+
+.form {
     margin-top: 10px;
     margin-left: 10%;
 }
-.mainP{
+
+.mainP {
     margin: 20%;
 }
-.comments{
+
+.comments {
     margin-left: 50px;
     margin-top: 40px;
 }
 
-.comment{
+.comment {
     margin-top: 50px;
     margin-left: 100px;
 }
 
-.permission{
+.permission {
     float: right;
 }
-.createUser{
+
+.createUser {
     text-align: center;
 }
-.userForm{
+
+.userForm {
     text-align: center;
     margin-top: 50px;
 }
-.unauthorized{
+
+.unauthorized {
     text-align: center;
     margin-top: 12%;
 }
-.radio{
+
+.radio {
     display: ruby-text-container;
 }
-.isDeleted{
-    background: black;
 
+.isDeleted {
+    background: black;
 }
 
-.button{
+.button {
     margin-bottom: 70px;
     text-align: center;
 }
-.userDelete{
+
+.userDelete {
     float: right;
     margin-right: 200px;
 }
-.userCreate{
+
+.userCreate {
     float: left;
     margin-left: 200px;
 }
-.date{
-    color:white;
+
+.date {
+    color: white;
     font-size: 12px;
     margin-bottom: 30px;
     display: flex;
     margin-left: 30px;
 }
-.commentss{
+
+.commentss {
     margin-top: 30px;
 }
-.buttonCommentD{
 
+.buttonCommentD {
     margin-right: 10px;
 }
-.deletepermit{
+
+.deletepermit {
     display: flex;
 }
-.time{
+
+.time {
     margin-left: 10px;
 }
-.shop{
+
+.shop {
     list-style: none;
     color: white;
     float: unset;
 }
-.review{
+
+.review {
     margin-left: 40px;
     list-style: circle;
     color: white;
     float: unset;
 }
-hr{
+
+hr {
     color: white;
 }
-.profileDisplay{
+
+.profileDisplay {
     align-items: center;
 }
 
