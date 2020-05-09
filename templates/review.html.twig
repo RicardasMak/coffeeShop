@@ -88,7 +88,7 @@
                                    <li class="review"><p>{{ comment.getComment }}</p></li>
 
                                 <!-- if user login as staff or shop owner will display all comments -->
-                               {% elseif role == 'staff' or userName == shop.userName %}
+                               {% elseif role == 'staff' or userName == shop.getShopOwner %}
 
                                    <p class="reviews">
                                    <li class="review">{{ comment.getComment }} </li>
@@ -112,7 +112,7 @@
                                <!-- delete, permit buttons and date comented -->
 
                                <!-- if user is loged in as staff or shop owner will display option to delete and permit comment to go online -->
-                               {% if role == 'staff' or userName == shop.userName %}
+                               {% if role == 'staff' or userName == shop.getShopOwner %}
 
                                    <div class = "deletepermit">
                                        <a class="buttonCommentD" href="/index.php?action=deleteComment&id={{ comment.getIdUnque }}">
