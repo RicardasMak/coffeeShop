@@ -2,157 +2,155 @@
 
 {% block main %}
 
-    <div class ="comments">
+    <div class="comments">
 
     <!-- add shop if role is staff -->
-        {% if role == ('staff') %}
-            <p>Create Shop</p>
+    {% if role == ('staff') %}
+        <p>Create Shop</p>
 
-            <form class="commentss" method='POST' action='/'>
-                <input type="hidden" name="action" value="processShop">
+        <form class="commentss" method='POST' action='/'>
+            <input type="hidden" name="action" value="processShop">
 
-                <p>Shop Name</p><textarea  name="shop" rows="1" cols="40"></textarea>
-                <p>Owner</p><textarea  name="shopOwner" rows="1" cols="40"></textarea>
-                <br>
-                <input type="submit" value="Create">
-            </form>
-            <p>{{ error}}</p>
-        {% endif %}
+            <p>Shop Name</p><textarea name="shop" rows="1" cols="40"></textarea>
+            <p>Owner</p><textarea name="shopOwner" rows="1" cols="40"></textarea>
+            <br>
+            <input type="submit" value="Create">
+        </form>
+        <p>{{ error }}</p>
+    {% endif %}
 
     <!--start looping shops -->
-        {% for shop in shop %}
-            <hr>
+    {% for shop in shop %}
+        <hr>
 
-            <li class="shop"><h2>{{ shop.getShopName }}</h2>
+        <li class="shop"><h2>{{ shop.getShopName }}</h2>
 
-            <!-- delete shop -->
+        <!-- delete shop -->
 
-            {% if role == 'staff' or userName == shop.userName %}
+        {% if role == 'staff' or userName == shop.userName %}
 
-                <div class="deletepermit">
-                    <a class="buttonCommentD" href="/index.php?action=deleteShop&id={{ shop.getId }}">DELETE</a>
-                </div>
+            <div class="deletepermit">
+                <a class="buttonCommentD" href="/index.php?action=deleteShop&id={{ shop.getId }}">DELETE</a>
+            </div>
 
-            {% endif %}
+        {% endif %}
 
-            <p>Reviews</p>
-            <!-- display shop review -->
-            {% for review in review %}
+        <p>Reviews</p>
+        <!-- display shop review -->
+        {% for review in review %}
 
-                {% if shop.getId == review.getId %}
-                    <li class="review">
-                        <p>{{ review.getReview }}</p>
-                    </li><br>
+            {% if shop.getId == review.getId %}
+                <li class="review">
+                    <p>{{ review.getReview }}</p>
+                </li><br>
 
-                    {% if role == 'staff' or userName == shop.userName %}
+                {% if role == 'staff' or userName == shop.userName %}
 
-                        <div class="deletepermit">
-                            <a class="buttonCommentD" href="/index.php?action=deleteReview&id={{ review.getidUnque }}">DELETE</a>
-                        </div>
-
-                    {% endif %}
-
-
+                    <div class="deletepermit">
+                        <a class="buttonCommentD" href="/index.php?action=deleteReview&id={{ review.getidUnque }}">DELETE</a>
+                    </div>
 
                 {% endif %}
 
-            {% endfor %}
-
-            <!-- add review -->
-
-            {% if role == 'staff' or shop.getShopOwner == userName and role == 'shop' %}
-
-                <form class="commentss" method='POST' action='/'>
-                    <input type="hidden" name="action" value="processReview">
-
-                    <input type="hidden" name="id" value="{{ shop.getId }}" >
-                    <input type="hidden" name="userName" value="{{ userName }}" >
-
-                    <p>Add Review</p><textarea  name="review" rows="2" cols="40"></textarea>
-
-                    <br>
-                    <input type="submit" value="Create">
-                </form>
-
             {% endif %}
-<hr>
-                           {% for comment in comment %}
-
-
-                               <!-- checks if shops table id matches comment table id -->
-                           {% if shop.getId == comment.getId %}
-
-                                <!-- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display -->
-                               {% if comment.getPermit != 0 and userName == ''%}
-
-                                   <li class="review"><p>{{ comment.getComment }}</p></li>
-
-                                <!-- if user login as staff, shop owner or admin will display all comments -->
-                               {% elseif role == 'staff' or userName == shop.getShopOwner or role == 'admin' %}
-
-                                   <p class="reviews">
-                                   <li class="review">{{ comment.getComment }} </li>
-
-                               {% endif %}
-                               <!-- -->
-
-                                   <!-- will check if user who commented is payed acc and allow to view profile details -->
-                               {% if comment.getProfilePayed > 0 %}
-
-                                   <a href="/index.php?action=profileDisplay&name={{ comment.getUserName }}">
-                                       <div class="date">
-                                       <p>{{ comment.getUserName }}</p></a> <p class ="time">{{ comment.getDate }}</p>
-                                        </div>
-                               {% elseif comment.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.userName %}
-
-                                   <p class="date">{{ comment.getUserName }} {{ comment.getDate }}</p>
-
-                               {% endif %}
-
-                               <!-- delete, permit buttons and date comented -->
-
-                               <!-- if user is loged in as staff or shop owner will display option to delete and permit comment to go online -->
-                               {% if role == 'staff' or userName == shop.getShopOwner %}
-
-                                   <div class = "deletepermit">
-                                       <a class="buttonCommentD" href="/index.php?action=deleteComment&id={{ comment.getIdUnque }}">
-                                           <p >DELETE</p>
-                                       </a>
-
-                                       <!-- if comment is still not permitted will display option to permit -->
-                                       {% if comment.getPermit == 0 %}
-
-                                           <a href="/index.php?action=permitComment&id={{ comment.getIdUnque }}&permit=1">
-                                               <p class="buttonComment">PERMIT</p>
-                                           </a>
-
-                                       {% endif %}
-
-                                   </div>
-                               {% endif %}
-                               <!-- -->
-                             {% endif %}
-
-                           {% endfor %}
-
-
-                    <form class="commentss" method='POST' action='/'>
-                        <input type="hidden" name="action" value="processComment">
-
-                        <input type="hidden" name="id" value="{{ shop.getId }}" >
-                        <input type="hidden" name="userName" value="{{ userName }}" >
-                        <input type="hidden" name="ifPayed" value="{{ ifPayed }}" >
-
-                        <p>Add Comment</p>
-                        <textarea  name="comment" rows="4" cols="40" ></textarea>
-                        <br><br>
-
-                        <input type="submit" value="Comment">
-
-                    </form>
 
         {% endfor %}
-    </div>
 
+        <!-- add review -->
+
+        {% if role == 'staff' or shop.getShopOwner == userName and role == 'shop' %}
+
+            <form class="commentss" method='POST' action='/'>
+                <input type="hidden" name="action" value="processReview">
+
+                <input type="hidden" name="id" value="{{ shop.getId }}">
+                <input type="hidden" name="userName" value="{{ userName }}">
+
+                <p>Add Review</p><textarea name="review" rows="2" cols="40"></textarea>
+
+                <br>
+                <input type="submit" value="Create">
+            </form>
+
+        {% endif %}
+        <hr>
+        {% for comment in comment %}
+
+
+            <!-- checks if shops table id matches comment table id -->
+            {% if shop.getId == comment.getId %}
+
+                <!-- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display -->
+                {% if comment.getPermit != 0 and userName == '' %}
+
+                    <li class="review"><p>{{ comment.getComment }}</p></li>
+
+                    <!-- if user login as staff, shop owner or admin will display all comments -->
+                {% elseif role == 'staff' or userName == shop.getShopOwner or role == 'admin' %}
+
+                    <p class="reviews">
+                    <li class="review">{{ comment.getComment }} </li>
+
+                {% endif %}
+                <!-- -->
+
+                <!-- will check if user who commented is payed acc and allow to view profile details -->
+                {% if comment.getProfilePayed > 0 %}
+
+                    <a href="/index.php?action=profileDisplay&name={{ comment.getUserName }}">
+                        <div class="date">
+                            <p>{{ comment.getUserName }}</p>
+                    </a> <p class="time">{{ comment.getDate }}</p>
+                    </div>
+                {% elseif comment.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.userName %}
+
+                    <p class="date">{{ comment.getUserName }} {{ comment.getDate }}</p>
+
+                {% endif %}
+
+                <!-- delete, permit buttons and date comented -->
+
+                <!-- if user is loged in as staff or shop owner will display option to delete and permit comment to go online -->
+                {% if role == 'staff' or userName == shop.getShopOwner %}
+
+                    <div class="deletepermit">
+                        <a class="buttonCommentD" href="/index.php?action=deleteComment&id={{ comment.getIdUnque }}">
+                            <p>DELETE</p>
+                        </a>
+
+                        <!-- if comment is still not permitted will display option to permit -->
+                        {% if comment.getPermit == 0 %}
+
+                            <a href="/index.php?action=permitComment&id={{ comment.getIdUnque }}&permit=1">
+                                <p class="buttonComment">PERMIT</p>
+                            </a>
+
+                        {% endif %}
+
+                    </div>
+                {% endif %}
+                <!-- -->
+            {% endif %}
+
+        {% endfor %}
+
+        <!-- send comment with shop id user name who commented and account payment status -->
+        <form class="commentss" method='POST' action='/'>
+            <input type="hidden" name="action" value="processComment">
+
+            <input type="hidden" name="id" value="{{ shop.getId }}">
+            <input type="hidden" name="userName" value="{{ userName }}">
+            <input type="hidden" name="ifPayed" value="{{ ifPayed }}">
+
+            <p>Add Comment</p>
+            <textarea name="comment" rows="4" cols="40"></textarea>
+            <br><br>
+
+            <input type="submit" value="Comment">
+
+        </form>
+
+    {% endfor %}
+    </div>
 
 {% endblock %}
