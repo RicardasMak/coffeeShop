@@ -25,6 +25,8 @@ create table shop(
     shopOwner varchar(250) not null
     );
 
+insert into shop(id, shopName, userName, profilePayed, shopOwner) value (1, 'amt', 'staff', 1, 'shop');
+
 create table comment(
     idUnque INT AUTO_INCREMENT primary key NOT NULL,
     id INT NOT NULL,
@@ -35,6 +37,8 @@ create table comment(
     profilePayed int(1)
     );
 
+insert into comment(id, comment, userName, permit, profilePayed) value(1, 'comment test', 'shop', '1', '1');
+
 create table review(
     idUnque INT AUTO_INCREMENT primary key NOT NULL,
     id INT NOT NULL,
@@ -43,4 +47,4 @@ create table review(
     userName varchar(250) not null
     );
 
-insert into shop(shopName, userName, profilePayed, shopOwner) value ('Amt', 'staff', '0', 'shop');
+insert into review(id, review, userName) value(1, 'review test', 'shop');
