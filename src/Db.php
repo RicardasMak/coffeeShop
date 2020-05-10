@@ -150,21 +150,21 @@ class Db
 
         return $stmt->execute();
     }
-    //deletes from table shop, comment or review
+    //delete shop with all comment and review from that shop
     public function deteleShop($table, $id)
     {
         if($table == 'shop')
-        {
+        {   //from shop table
             $sql = "DELETE FROM shop WHERE id = :id";
         }
         elseif($table == 'review')
-        {
+        {   //from review table
             $sql = "DELETE FROM review WHERE id = :id";
         }else
-        {
+        {   //from comment table
             $sql = "DELETE FROM comment WHERE id = :id";
         }
-
+        //prepare statement
         $stmt = $this->connection->prepare($sql);
 
         $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
