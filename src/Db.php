@@ -27,15 +27,15 @@ class Db
     //displays all from comment tables and returns all
     public function getAllShops()
     {
-            $sql = 'SELECT * FROM shop ORDER BY date DESC';
+        $sql = 'SELECT * FROM shop ORDER BY date DESC';
 
-            $stmt = $this->connection->prepare($sql);
+        $stmt = $this->connection->prepare($sql);
 
-            $stmt->execute();
+        $stmt->execute();
 
-            $stmt->setFetchMode(\PDO::FETCH_CLASS, 'Tudublin\\Shop');
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, 'Tudublin\\Shop');
 
-            return $stmt->fetchAll();
+        return $stmt->fetchAll();
     }
     //gets all review
     public function getAllReview()
