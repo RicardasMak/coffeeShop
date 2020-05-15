@@ -121,7 +121,7 @@ class WebApplication
                 break;
 
             case 'profile':
-                if(1 == $_SESSION['ifPayed'])
+                if(1 == $_SESSION['ifPayed'] and isset($_SESSION['userName']))
                 {
                     $this->mainController->profile($error =[]);
 
@@ -131,7 +131,7 @@ class WebApplication
                 break;
 
             case 'profileSubmit':
-                if(1 == $_SESSION['ifPayed'])
+                if(1 == $_SESSION['ifPayed'] and isset($_SESSION['userName']))
                 {
                     $this->profileManager->updateProfile();
                 }else{
