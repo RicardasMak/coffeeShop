@@ -10,6 +10,7 @@ class WebApplication
     private $reviewController;
     private $shopController;
     private $accountManager;
+    private $db;
 
     private $twig;
     const PATH_TO_TEMPLATES = __DIR__. '/../templates';
@@ -26,6 +27,7 @@ class WebApplication
         $this->reviewController = new ReviewController($this->twig);
         $this->shopController = new ShopController($this->twig);
         $this->accountManager = new AccountManager($this->twig);
+        $this->db = new Db();
 
     }
 
@@ -58,7 +60,13 @@ class WebApplication
                 break;
 
             case 'processShop':
-                $this->shopController->processShop();
+                if('staff' == $_SESSION['role'])
+                {
+                    $this->shopController->processShop();
+                }
+                else{
+                    $this->mainController->error();
+                }
                 break;
 
             case 'logout':
@@ -93,11 +101,23 @@ class WebApplication
                 break;
 
             case 'deleteComment':
-                $this->commentController->deleteComment();
+                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
+                {
+                    $this->commentController->deleteComment();
+                }
+                else{
+                    $this->mainController->error();
+                }
                 break;
 
             case 'permitComment':
-                $this->commentController->permitComment();
+                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
+                {
+                    $this->commentController->permitComment();
+                }
+                else{
+                    $this->mainController->error();
+                }
                 break;
 
             case 'profile':
@@ -111,7 +131,12 @@ class WebApplication
                 break;
 
             case 'profileSubmit':
-                $this->profileManager->updateProfile();
+                if(1 == $_SESSION['ifPayed'])
+                {
+                    $this->profileManager->updateProfile();
+                }else{
+                    $this->mainController->error();
+                }
                 break;
 
             case 'profileDisplay':
@@ -123,15 +148,32 @@ class WebApplication
                 break;
 
             case 'deleteShop':
-                $this->shopController->deleteShop();
+                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
+                {
+                    $this->shopController->deleteShop();
+                }
+                else{
+                    $this->mainController->error();
+                }
                 break;
 
             case 'processReview':
-                $this->reviewController->processReview();
+                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
+                {
+                    $this->reviewController->processReview();
+                }
+                else{
+                    $this->mainController->error();
+                }
                 break;
 
             case 'deleteReview':
-                $this->reviewController->deleteReview();
+                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role']) {
+                    $this->reviewController->deleteReview();
+                }
+                else{
+                    $this->mainController->error();
+                }
                 break;
 
             default:

@@ -59,10 +59,7 @@ class CommentController
 
             $this->mainController->review();
         }else{
-            $this->mainController->review('field is empty');
+            $this->mainController->review();
         }
     }
-
-
-
 }
