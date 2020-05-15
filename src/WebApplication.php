@@ -148,7 +148,7 @@ class WebApplication
                 break;
 
             case 'deleteShop':
-                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
+                if('staff' == $_SESSION['role'])
                 {
                     $this->shopController->deleteShop();
                 }
