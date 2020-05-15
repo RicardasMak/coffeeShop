@@ -10,7 +10,6 @@ class WebApplication
     private $reviewController;
     private $shopController;
     private $accountManager;
-    private $db;
 
     private $twig;
     const PATH_TO_TEMPLATES = __DIR__. '/../templates';
@@ -27,14 +26,10 @@ class WebApplication
         $this->reviewController = new ReviewController($this->twig);
         $this->shopController = new ShopController($this->twig);
         $this->accountManager = new AccountManager($this->twig);
-        $this->db = new Db();
-
     }
 
     public function run()
     {
-        $temp = null;
-
         $action = filter_input(INPUT_GET, 'action');
         if(empty($action))
         {
@@ -52,7 +47,7 @@ class WebApplication
                 break;
 
             case 'login':
-                $this->mainController->login($error =[]);
+                $this->mainController->login();
                 break;
 
             case 'processLogin':
