@@ -57,7 +57,6 @@ form {
 
 .form {
     margin-top: 10px;
-    margin-left: 10%;
 }
 
 .mainP {
@@ -133,6 +132,7 @@ form {
 
 .deletepermit {
     display: flex;
+    margin-top: -30px;
 }
 
 .time {
@@ -160,3 +160,9 @@ hr {
     align-items: center;
 }
 
+.footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
