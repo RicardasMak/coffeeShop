@@ -21,15 +21,24 @@ class ReviewController
         $review = filter_input(INPUT_POST, 'review');
         $userName = filter_input(INPUT_POST, 'userName');
 
+        //checks if shop owner matches log in user, return boolean
+        $shopOwnerCheck = $this->getShopOwner($id);
 
-        if (!empty($review)) {
-            //insert review by shops id
-            $this->dB->insertReview($id, $review, $userName);
-            $this->mainController->review();
-        } else {
+        if($shopOwnerCheck or 'staff' == $_SESSION['role']) {
 
-            $error = ['field must by set'];
-            $this->mainController->review($error);
+            if (!empty($review)) {
+                //insert review by shops id
+                $this->dB->insertReview($id, $review, $userName);
+                $this->mainController->review();
+            } else {
+
+                $error = ['field must by set'];
+                $this->mainController->review($error);
+            }
+        }else{
+
+            //sends to error page
+            $this->mainController->error();
         }
     }
 
