@@ -38,10 +38,53 @@ class ReviewController
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        if (!empty($id))
+        //checks if shop owner matches log in user, return boolean
+        $shopOwnerCheck = $this->getShopOwner($id);
+
+        if($shopOwnerCheck or 'staff' == $_SESSION['role'])
         {
+            //deletes review from db
             $this->dB->deteleShopContent('review', $id);
+
+            $this->mainController->review();
+        }else{
+
+            //sends to error page
+            $this->mainController->error();
         }
-        $this->mainController->review();
+    }
+
+    //get shops name
+    private function getShopOwner($id)
+    {
+        //check if reviews id is not empty
+        if (!empty($id)) {
+
+            $reviews = $this->dB->getAllReview();
+
+            //loop all reviews
+            foreach ($reviews as $review)
+            {
+                //finds review by id (idUnque)
+                if($review->getIdUnque() == $id)
+                {
+                   $shops = $this->dB->getAllShops();
+
+                   foreach ($shops as $shop)
+                   {
+                       //compare shops id with reviews id
+                       if ($shop->getId() == $review->getId())
+                       {
+                           //compares shops owner with user who is loged in
+                           if ($shop->getShopOwner() == $_SESSION['userName'])
+                           {
+                               return true;
+                           }
+                       }
+                   }
+                }
+            }
+        }
+        return false;
     }
 }

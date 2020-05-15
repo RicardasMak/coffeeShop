@@ -168,6 +168,7 @@ class WebApplication
                 break;
 
             case 'deleteReview':
+
                 if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role']) {
                     $this->reviewController->deleteReview();
                 }
