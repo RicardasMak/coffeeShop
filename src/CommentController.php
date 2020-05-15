@@ -22,9 +22,22 @@ class CommentController
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        $this->dB->deteleShopContent('comment', $id);
+        //find shop owners name by comments id return boolean
+        $shopName = $this->getShopOwner($id);
 
-        $this->mainController->review();
+        //if shop owner or role is staff will delete comment
+        if($shopName or $_SESSION['role'] == 'staff')
+        {
+            //send to db id to delete comment
+            $this->dB->deteleShopContent('comment', $id);
+
+            //refresh page
+            $this->mainController->review();
+        }
+        else{
+            //else will send to error page
+            $this->mainController->error();
+        }
     }
 
     //on click 'permit' will send comment online and unregister user will by able to see
@@ -32,11 +45,11 @@ class CommentController
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        //find shop owners name by comments id
-        $permit = $this->getShopOwner($id);
+        //find shop owners name by comments id return boolean
+        $shopName = $this->getShopOwner($id);
 
-        //if shop owner or role is staff will add permit
-        if($permit or $_SESSION['role'] == 'staff')
+        //if shop owner or role is staff will change comment to go online
+        if($shopName or $_SESSION['role'] == 'staff')
         {
             $this->dB->allowComment($id, $permit=1);
 
