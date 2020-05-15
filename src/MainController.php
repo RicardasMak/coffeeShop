@@ -56,7 +56,7 @@ class MainController
         print $html;
     }
     //login page
-    public function login($error)
+    public function login($error = [])
     {
         $templates = 'login.html.twig';
         $args=['errors' => $error,

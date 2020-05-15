@@ -20,11 +20,17 @@ class LogInController
 
         $acc = $this->getUser($userName, $password);
 
+        $roleCheck = $this->getRoleAdmin();
+
         if(null == $acc)
         {
             $error = ['wrong password or username'];
 
             $this->mainController->login($error);
+        }
+        elseif($roleCheck != '')
+        {
+            $this->mainController->login($roleCheck);
         }
         else{
             $_SESSION['role'] = $acc->getRole();
@@ -53,5 +59,16 @@ class LogInController
         return null;
     }
 
-
+    //check if admin is already logged in
+    private function getRoleAdmin()
+    {
+        if(isset($_SESSION['role']))
+        {
+            if($_SESSION['role'] == 'admin')
+            {
+                return 'Administrator is already logged in';
+            }
+        }
+        return '';
+    }
 }
