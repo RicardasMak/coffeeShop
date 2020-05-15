@@ -178,7 +178,6 @@ class WebApplication
 
             default:
                 $this->mainController->home();
-
         }
     }
 }

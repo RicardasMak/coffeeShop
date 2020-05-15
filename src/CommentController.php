@@ -32,9 +32,22 @@ class CommentController
     {
         $id = filter_input(INPUT_GET, 'id');
 
-        $this->dB->allowComment($id, $permit=1);
+        //find shop owners name by comments id
+        $permit = $this->getShopOwner($id);
 
-        $this->mainController->review();
+        //if shop owner or role is staff will add permit
+        if($permit or $_SESSION['role'] == 'staff')
+        {
+            $this->dB->allowComment($id, $permit=1);
+
+            //refresh page
+            $this->mainController->review();
+        }
+        else{
+            //else will send to error page
+            $this->mainController->error();
+        }
+
     }
     //process comment into table with user who posted details
     public function processComment()
@@ -61,5 +74,34 @@ class CommentController
         }else{
             $this->mainController->review();
         }
+    }
+    //will check if user who is connected is shop owner
+    private function getShopOwner($id)
+    {
+        $comment = $this->dB->getAllComment();
+        $shop = $this->dB->getAllShops();
+
+        //loops comments
+        foreach ($comment as $com)
+        {
+            //compares comment id
+            if($com->getIdUnque() == $id)
+            {
+                //loops shop if comment find with id
+                foreach ($shop as $findShop)
+                {
+                    //compares shop id with comments id if matches
+                    if($findShop->getId() == $com->getId());
+                    {
+                        //compare if logged in user is shop owner
+                        if($_SESSION['userName'] == $findShop->getShopOwner())
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
