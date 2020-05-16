@@ -70,7 +70,7 @@ class WebApplication
 
             case 'secret':
                 if('admin' == $_SESSION['role']) {
-                    $this->mainController->secret();
+                    $this->mainController->accountManager();
                 }
                 else{
                     $this->mainController->error();

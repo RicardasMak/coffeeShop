@@ -85,9 +85,9 @@ class MainController
         print $html;
     }
     //manage manage acc only for admin role
-    public function secret($error = null, $delete =null)
+    public function accountManager($error = null, $delete =null)
     {
-        $templates = 'secret.html.twig';
+        $templates = 'accountManager.html.twig';
         $args = ['role'=> $_SESSION['role'],
                 'ifPayed'=> $_SESSION['ifPayed'],
                 'userName'=> $_SESSION['userName'],

@@ -26,6 +26,7 @@ class LogInController
         {
             $this->mainController->login('wrong password or username');
         }
+        //will check if one of admins already connected
         elseif($roleCheck != '')
         {
             $this->mainController->login($roleCheck);

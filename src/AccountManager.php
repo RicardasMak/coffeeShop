@@ -26,16 +26,16 @@ class AccountManager
                 $this->db->deleteUser($userDelete);
 
                 $message = ['account deleted successfully'];
-                $this->mainController->secret($temp = null, $message);
+                $this->mainController->accountManager($temp = null, $message);
             } else {
 
                 $error = ['user not found'];
-                $this->mainController->secret($temp = null, $error);
+                $this->mainController->accountManager($temp = null, $error);
             }
         } else {
 
             $error = ['field is empty'];
-            $this->mainController->secret($temp = null, $error);
+            $this->mainController->accountManager($temp = null, $error);
         }
     }
 
@@ -52,21 +52,26 @@ class AccountManager
         $userNameCheck = $this->checkUserName($userName);
         $passwordCheck = $this->passwordCheck($password, $passConfirm);
 
-        if (sizeof($userNameCheck) == 0 and sizeof($passwordCheck) == 0) {
+        if (sizeof($userNameCheck) == 0 and sizeof($passwordCheck) == 0)
+        {
             $passwordHashed = $this->hashPassword($password);
             $this->db->createUser($userName, $passwordHashed, $role, $payed);
 
-            $message = ['account crated'];
-            $this->mainController->secret($message);
-        } elseif (sizeof($userNameCheck) > 0) {
+            $message = ['account created'];
+            $this->mainController->accountManager($message);
 
-            $this->mainController->secret($userNameCheck);
+        } elseif (sizeof($userNameCheck) > 0)
+        {
+            $this->mainController->accountManager($userNameCheck);
 
-        } elseif (sizeof($passwordCheck) > 0) {
-            $this->mainController->secret($passwordCheck);
-        } else {
+        }
+        elseif (sizeof($passwordCheck) > 0)
+        {
+            $this->mainController->accountManager($passwordCheck);
+        }
+        else {
 
-            $this->mainController->secret();
+            $this->mainController->accountManager();
         }
     }
 
@@ -75,9 +80,12 @@ class AccountManager
     {
         $error = [];
 
-        if (empty($password) and empty($passwordConfirm)) {
+        if (empty($password) and empty($passwordConfirm))
+        {
             $error = ['password field is empty'];
-        } elseif ($password != $passwordConfirm) {
+        }
+        elseif ($password != $passwordConfirm)
+        {
             $error = ['password doesnt match'];
         }
 
