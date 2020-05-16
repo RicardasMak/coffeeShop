@@ -117,7 +117,7 @@ form {
 .date {
     color: white;
     font-size: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     display: flex;
     margin-left: 30px;
 }
@@ -165,4 +165,7 @@ hr {
     left: 0;
     right: 0;
     bottom: 0;
+}
+.space{
+    margin-bottom: 50px;
 }
