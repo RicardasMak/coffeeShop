@@ -24,9 +24,7 @@ class LogInController
 
         if(null == $acc)
         {
-            $error = ['wrong password or username'];
-
-            $this->mainController->login($error);
+            $this->mainController->login('wrong password or username');
         }
         elseif($roleCheck != '')
         {
