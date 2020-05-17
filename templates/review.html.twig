@@ -98,7 +98,7 @@
             {% if shop.getId == comment.getId %}
 
                 <!-- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display -->
-                {% if comment.getPermit != 0 and userName == '' or comment.getPermit != 0 and role == 'admin' %}
+                {% if comment.getPermit != 0  %}
 
                     <li class="review"><p>{{ comment.getComment }}</p></li>
 
