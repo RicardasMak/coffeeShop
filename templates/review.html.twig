@@ -119,7 +119,7 @@
                             <p>{{ comment.getUserName }}</p>
                     </a> <p class="time">{{ comment.getDate }}</p>
                     </div>
-                {% elseif comment.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.getShopOwner or role == 'admin'%}
+                {% elseif comment.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.getShopOwner %}
 
                     <p class="date">{{ comment.getUserName }} {{ comment.getDate }}</p>
 

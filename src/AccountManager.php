@@ -106,7 +106,7 @@ class AccountManager
 
             if ($acc->getUserName() == $userName) {
 
-                    $error = ['that user name is already in use'];
+                $error = ['that user name is already in use'];
             }
         }
 

@@ -6,7 +6,6 @@ class MainController
 {
     private $twig;
     private $dB;
-    private $error = [];
 
     public function __construct($twig)
     {
@@ -19,9 +18,9 @@ class MainController
     {
         $templates = 'home.html.twig';
         $args=['role'=> $_SESSION['role'],
-                'ifPayed'=> $_SESSION['ifPayed'],
-                'userName'=> $_SESSION['userName']
-            ];
+            'ifPayed'=> $_SESSION['ifPayed'],
+            'userName'=> $_SESSION['userName']
+        ];
         $html = $this->twig->render($templates, $args);
 
         print $html;
@@ -31,9 +30,9 @@ class MainController
     {
         $templates = 'about.html.twig';
         $args = ['role'=> $_SESSION['role'],
-                'ifPayed'=> $_SESSION['ifPayed'],
-                'userName'=> $_SESSION['userName']
-            ];
+            'ifPayed'=> $_SESSION['ifPayed'],
+            'userName'=> $_SESSION['userName']
+        ];
         $html = $this->twig->render($templates, $args);
 
         print $html;
@@ -43,25 +42,25 @@ class MainController
     {
         $templates = 'review.html.twig';
         $args=['shop' =>$this->dB->getAllShops(),
-                'comment' => $this->dB->getAllComment(),
-                'review' =>$this->dB->getAllReview(),
-               'role'=> $_SESSION['role'],
-                'ifPayed'=> $_SESSION['ifPayed'],
-                'userName'=> $_SESSION['userName'],
-                'error' => $error
-              ];
+            'comment' => $this->dB->getAllComment(),
+            'review' =>$this->dB->getAllReview(),
+            'role'=> $_SESSION['role'],
+            'ifPayed'=> $_SESSION['ifPayed'],
+            'userName'=> $_SESSION['userName'],
+            'error' => $error
+        ];
 
         $html = $this->twig->render($templates, $args);
 
         print $html;
     }
     //login page
-    public function login($error = [])
+    public function login($error = null)
     {
         $templates = 'login.html.twig';
         $args=['errors' => $error,
-               'role'=> $_SESSION['role']
-              ];
+            'role'=> $_SESSION['role']
+        ];
         $html = $this->twig->render($templates, $args);
 
         print $html;
@@ -73,7 +72,7 @@ class MainController
         $_SESSION['userName'] = null;
         $_SESSION['ifPayed'] = null;
 
-        $this->login($this->error);
+        $this->login();
     }
     //for unauthorize access
     public function error()
@@ -89,10 +88,10 @@ class MainController
     {
         $templates = 'accountManager.html.twig';
         $args = ['role'=> $_SESSION['role'],
-                'ifPayed'=> $_SESSION['ifPayed'],
-                'userName'=> $_SESSION['userName'],
-                'error' => $error,
-                'delete' => $delete
+            'ifPayed'=> $_SESSION['ifPayed'],
+            'userName'=> $_SESSION['userName'],
+            'error' => $error,
+            'delete' => $delete
         ];
         $html = $this->twig->render($templates, $args);
 
