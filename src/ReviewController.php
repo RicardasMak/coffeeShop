@@ -48,7 +48,7 @@ class ReviewController
         $id = filter_input(INPUT_GET, 'id');
 
         //checks if shop owner matches log in user, return boolean
-        $shopOwnerCheck = $this->getShopOwner($id);
+        $shopOwnerCheck = $this->getReviewName($id);
 
         if($shopOwnerCheck or 'staff' == $_SESSION['role'])
         {
@@ -66,31 +66,42 @@ class ReviewController
     //get shops name
     private function getShopOwner($id)
     {
-        //check if reviews id is not empty
-        if (!empty($id)) {
+        $shop = $this->dB->getAllShops();
 
-            $reviews = $this->dB->getAllReview();
+        foreach ($shop as $shops)
+        {
+           if ($shops->getId() == $id)
+           {
+               if($shops->getShopOwner() == $_SESSION['userName'])
+               {
+                   return true;
+               }
+           }
+        }
 
-            //loop all reviews
-            foreach ($reviews as $review)
+        return false;
+    }
+
+    //get id to delete review
+    private function getReviewName($id)
+    {
+        $review = $this->dB->getAllReview();
+
+        foreach ($review as $reviews)
+        {
+            if($reviews->getIdUnque() == $id)
             {
-                //finds review by id (idUnque)
-                if($review->getIdUnque() == $id)
-                {
-                   $shops = $this->dB->getAllShops();
+                $shop = $this->dB->getAllShops();
 
-                   foreach ($shops as $shop)
-                   {
-                       //compare shops id with reviews id
-                       if ($shop->getId() == $review->getId())
-                       {
-                           //compares shops owner with user who is loged in
-                           if ($shop->getShopOwner() == $_SESSION['userName'])
-                           {
-                               return true;
-                           }
-                       }
-                   }
+                foreach ($shop as $shops)
+                {
+                    if($shops->getId() == $reviews->getId())
+                    {
+                        if($shops->getShopOwner() == $_SESSION['userName'])
+                        {
+                            return true;
+                        }
+                    }
                 }
             }
         }
