@@ -8,10 +8,10 @@ class AccountManager
     private $db;
     private $mainController;
 
-    public function __construct($twig)
+    public function __construct()
     {
         $this->db = new Db();
-        $this->mainController = new MainController($twig);
+        $this->mainController = new MainController();
     }
 
     //delete account

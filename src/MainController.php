@@ -2,14 +2,14 @@
 
 namespace Tudublin;
 
-class MainController
+class MainController extends Controller
 {
-    private $twig;
     private $dB;
 
-    public function __construct($twig)
+    public function __construct()
     {
-        $this->twig = $twig;
+        parent::__construct();
+
         $this->dB = new Db();
 
     }

@@ -8,11 +8,11 @@ class ShopController
     private $mainController;
     private $permit;
 
-    public function __construct($twig)
+    public function __construct()
     {
         $this->dB = new Db();
 
-        $this->mainController = new MainController($twig);
+        $this->mainController = new MainController();
         $this->permit = 0;
     }
     //create shop

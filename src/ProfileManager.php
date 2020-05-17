@@ -7,10 +7,10 @@ class ProfileManager
     private $dB;
     private $mainController;
 
-    public function __construct($twig)
+    public function __construct()
     {
         $this->dB = new Db();
-        $this->mainController = new MainController($twig);
+        $this->mainController = new MainController();
     }
     //will update profile
     public function updateProfile()

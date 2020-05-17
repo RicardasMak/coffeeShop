@@ -7,10 +7,10 @@ class LogInController
     private $dB;
     private $mainController;
 
-    public function __construct($twig)
+    public function __construct()
     {
         $this->dB = new Db();
-        $this->mainController = new MainController($twig);
+        $this->mainController = new MainController();
     }
     //takes user input from login page and will check if details matches the one in db
     public function processLogin()

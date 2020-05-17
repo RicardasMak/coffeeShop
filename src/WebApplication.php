@@ -11,21 +11,15 @@ class WebApplication
     private $shopController;
     private $accountManager;
 
-    private $twig;
-    const PATH_TO_TEMPLATES = __DIR__. '/../templates';
-
     public function __construct()
     {
-        $this->twig = new \Twig\Environment(
-            new \Twig\Loader\FilesystemLoader(self::PATH_TO_TEMPLATES));
-
-        $this->commentController = new CommentController($this->twig);
-        $this->mainController = new MainController($this->twig);
-        $this->loginController = new LogInController($this->twig);
-        $this->profileManager = new ProfileManager($this->twig);
-        $this->reviewController = new ReviewController($this->twig);
-        $this->shopController = new ShopController($this->twig);
-        $this->accountManager = new AccountManager($this->twig);
+        $this->commentController = new CommentController();
+        $this->mainController = new MainController();
+        $this->loginController = new LogInController();
+        $this->profileManager = new ProfileManager();
+        $this->reviewController = new ReviewController();
+        $this->shopController = new ShopController();
+        $this->accountManager = new AccountManager();
     }
 
     public function run()

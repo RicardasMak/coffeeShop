@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ac722e71-2fc1-41e1-b631-dfc5694d4b70" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccountManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccountManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogInController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogInController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProfileManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProfileManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/review.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WebApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/WebApplication.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +148,7 @@
       <workItem from="1589575069821" duration="4221000" />
       <workItem from="1589647064474" duration="6540000" />
       <workItem from="1589706826910" duration="3360000" />
-      <workItem from="1589710261888" duration="6807000" />
+      <workItem from="1589710261888" duration="7412000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1588757035126</created>
@@ -403,7 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1589712867101</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="update">
+      <created>1589717806526</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1589717806526</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update">
+      <created>1589717948008</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1589717948008</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,18 +468,18 @@
       <screen x="50" y="27" width="1550" height="873" />
     </state>
     <state x="119" y="27" width="514" height="873" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/50.27.1550.873@50.27.1550.873" timestamp="1587805743906" />
-    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2" timestamp="1589717806298">
+    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2" timestamp="1589717947796">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
-    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2/50.27.1550.873@50.27.1550.873" timestamp="1589717806298" />
+    <state x="396" y="27" width="848" height="873" key="CommitChangelistDialog2/50.27.1550.873@50.27.1550.873" timestamp="1589717947796" />
     <state x="607" y="210" width="424" height="521" key="FileChooserDialogImpl" timestamp="1588000418673">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
     <state x="607" y="210" width="424" height="521" key="FileChooserDialogImpl/50.27.1550.873@50.27.1550.873" timestamp="1588000418673" />
-    <state x="600" y="274" width="559" height="385" key="NewPhpClassDialog" timestamp="1589707050083">
+    <state x="600" y="274" width="559" height="385" key="NewPhpClassDialog" timestamp="1589718164721">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
-    <state x="600" y="274" width="559" height="385" key="NewPhpClassDialog/50.27.1550.873@50.27.1550.873" timestamp="1589707050083" />
+    <state x="600" y="274" width="559" height="385" key="NewPhpClassDialog/50.27.1550.873@50.27.1550.873" timestamp="1589718164721" />
     <state x="621" y="388" width="397" height="158" key="NewPhpFileDialog" timestamp="1584547908656">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
@@ -468,10 +488,10 @@
       <screen x="50" y="27" width="1550" height="873" />
     </state>
     <state x="338" y="97" width="1022" height="737" key="SettingsEditor/50.27.1550.873@50.27.1550.873" timestamp="1585144945270" />
-    <state x="420" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1589717814952">
+    <state x="420" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1589717954429">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
-    <state x="420" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/50.27.1550.873@50.27.1550.873" timestamp="1589717814952" />
+    <state x="420" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/50.27.1550.873@50.27.1550.873" timestamp="1589717954429" />
     <state x="597" y="383" width="445" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588982130293">
       <screen x="50" y="27" width="1550" height="873" />
     </state>
