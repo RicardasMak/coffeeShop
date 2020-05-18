@@ -78,7 +78,10 @@ class MainController extends Controller
     public function error()
     {
         $templates = 'error.html.twig';
-        $args=['role'=> $_SESSION['role']];
+        $args=['role'=> $_SESSION['role'],
+            'ifPayed'=> $_SESSION['ifPayed'],
+            'userName'=> $_SESSION['userName']
+            ];
         $html = $this->twig->render($templates, $args);
 
         print $html;
@@ -103,6 +106,7 @@ class MainController extends Controller
         $templates = 'profile.html.twig';
         $args=['ifPayed'=> $_SESSION['ifPayed'],
             'role'=> $_SESSION['role'],
+            'userName'=> $_SESSION['userName'],
             'account' => $acc
         ];
 
@@ -116,6 +120,7 @@ class MainController extends Controller
         $templates = 'displayProfile.html.twig';
         $args=['ifPayed'=> $_SESSION['ifPayed'],
             'role'=> $_SESSION['role'],
+            'userName'=> $_SESSION['userName'],
             'account' => $acc];
         $html = $this->twig->render($templates, $args);
 
