@@ -43,20 +43,7 @@
                 <li class="review">
                     <p>{{ review.getReview }}</p>
                 </li>
-
-                <!-- will check if user who commented is payed acc and allow to view profile details -->
-                {% if review.getProfilePayed > 0 %}
-
-                    <a href="/index.php?action=profileDisplay&name={{ review.getUserName }}">
-                        <div class="date">
-                            <p>{{ reivew.getUserName }}</p>
-                    </a> <p class="time">{{ review.getDate }}</p>
-                    </div>
-                {% elseif review.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.getShopOwner or role == 'admin'%}
-
-                    <p class="date">{{ review.getUserName }} {{ review.getDate }}</p>
-
-                {% endif %}
+            <br>
 
                 <!--delete button for review -->
                 {% if role == 'staff' or userName == shop.getShopOwner %}
@@ -119,7 +106,7 @@
                             <p>{{ comment.getUserName }}</p>
                     </a> <p class="time">{{ comment.getDate }}</p>
                     </div>
-                {% elseif comment.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.getShopOwner or comment.getPermit == 1 and userName is defined%}
+                {% elseif comment.getPermit == 1 and userName == '' or role == 'staff' or userName == shop.getShopOwner or comment.getPermit == 1 and userName is defined %}
 
                     <p class="date">{{ comment.getUserName }} {{ comment.getDate }}</p>
 

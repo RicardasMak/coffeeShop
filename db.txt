@@ -15,6 +15,7 @@ create table users(
 insert into users(userName, password, role, payed, email, occupation, phone) value('admin', '$2y$10$qwZ1biRcwjseUeJy7RTZKen/FCEGqYtOFqs/D8BUSB9MKqyUJwJq2', 'admin', 1, 'admin@adming.com', 'web administrator', '+360 402 12345');
 insert into users(userName, password, role, payed) value('staff', '$2y$10$89t24/GN7Bwh/7C7.O2UZO8wCZdgH6E0mIwAENO7TQobnS2HvN02y', 'staff', 0);
 insert into users(userName, password, role, payed, email, occupation, phone) value('shop', '$2y$10$2ThUm7.OdYTTSuXTnroFFOKU8ZRKIMOqbJL6XW9q8KFLYH4vdi0bm', 'shop', 1, 'shop@owner.com', 'shop owner', '+123321231');
+insert into users(userName, password, role, payed, email, occupation, phone) value('shoptest', '$2y$10$2ThUm7.OdYTTSuXTnroFFOKU8ZRKIMOqbJL6XW9q8KFLYH4vdi0bm', 'shop', 1, 'shoptest@owner.com', 'shop owner', '+12355555');
 
 create table shop(
     id INT AUTO_INCREMENT primary key NOT NULL,
