@@ -43,7 +43,7 @@
                 <li class="review">
                     <p>{{ review.getReview }}</p>
                 </li>
-            <br>
+                <br>
 
                 <!--delete button for review -->
                 {% if role == 'staff' or userName == shop.getShopOwner %}
@@ -85,12 +85,12 @@
             {% if shop.getId == comment.getId %}
 
                 <!-- user is not login as staff or shopOwner and comment is not permitted to go online by user will not display -->
-                {% if comment.getPermit != 0  %}
+                {% if comment.getPermit != 0 %}
 
                     <li class="review"><p>{{ comment.getComment }}</p></li>
 
                     <!-- if user login as staff, shop owner will display all comments -->
-                {% elseif role == 'staff' or userName == shop.getShopOwner%}
+                {% elseif role == 'staff' or userName == shop.getShopOwner %}
 
                     <p class="reviews">
                     <li class="review">{{ comment.getComment }} </li>

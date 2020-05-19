@@ -11,66 +11,66 @@
 
 <body>
 
-    <nav>
+<nav>
 
-        <ul>
-            {% if role %}
+    <ul>
+        {% if role is defined %}
 
-                <li class="login">
+            <li class="login">
 
-                    <a href="/index.php?action=logout">
-                         Log out
-                    </a>
+                <a href="/index.php?action=logout">
+                    Log out
+                </a>
 
-                </li>
-                <p class="permission">{{ userName }}</p>
-            {% else %}
-                <li class="login">
-                    <a href="/index.php?action=login">
-                        Log in
-                    </a>
-                </li>
-            {% endif %}
-
-               <li>
-                <a href="/index.php">
-                    Home
+            </li>
+            <p class="permission">{{ userName }}</p>
+        {% else %}
+            <li class="login">
+                <a href="/index.php?action=login">
+                    Log in
                 </a>
             </li>
-            <li>
-                <a href="/index.php?action=about">
-                    About
-                </a>
-            </li>
-            <li>
-                <a href="/index.php?action=review">
-                    Review
-                </a>
-            </li>
+        {% endif %}
 
-            {% if role is same as ('admin') %}
+        <li>
+            <a href="/index.php">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="/index.php?action=about">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="/index.php?action=review">
+                Review
+            </a>
+        </li>
+
+        {% if role is same as ('admin') %}
 
             <li>
                 <a href="/index.php?action=secret">
                     Create user
                 </a>
             </li>
-            {% endif %}
+        {% endif %}
 
-            {% if ifPayed == 1 %}
+        {% if ifPayed == 1 %}
 
-                <li>
-                    <a href="/index.php?action=profile">
-                        Create Profile
-                    </a>
-                </li>
-            {% endif %}
+            <li>
+                <a href="/index.php?action=profile">
+                    Create Profile
+                </a>
+            </li>
+        {% endif %}
 
-        </ul>
-    </nav>
+    </ul>
+</nav>
 
-    {% block main %}
-    {% endblock %}
+{% block main %}
+{% endblock %}
 
 </body>
 

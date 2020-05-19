@@ -90,23 +90,11 @@ class WebApplication
                 break;
 
             case 'deleteComment':
-                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
-                {
                     $this->commentController->deleteComment();
-                }
-                else{
-                    $this->mainController->error();
-                }
                 break;
 
             case 'permitComment':
-                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
-                {
-                    $this->commentController->permitComment();
-                }
-                else{
-                    $this->mainController->error();
-                }
+                     $this->commentController->permitComment();
                 break;
 
             case 'profile':
@@ -147,24 +135,12 @@ class WebApplication
                 break;
 
             case 'processReview':
-                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role'])
-                {
                     $this->reviewController->processReview();
-                }
-                else{
-                    $this->mainController->error();
-                }
                 break;
 
             case 'deleteReview':
-
-                if('staff' == $_SESSION['role'] or 'shop' == $_SESSION['role']) {
                     $this->reviewController->deleteReview();
-                }
-                else{
-                    $this->mainController->error();
-                }
-                break;
+                 break;
 
             default:
                 $this->mainController->home();
